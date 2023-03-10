@@ -11,3 +11,6 @@ I only have 2 weeks to learn and create ⊙﹏⊙∥
 Done!
 Download the code igniter 3 first then replace the application folder with this application folder!
 The project name is CI3project.
+
+
+$config['base_url'] = 'http://localhost/CI3project/index.php/';
