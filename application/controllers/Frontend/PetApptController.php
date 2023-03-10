@@ -13,11 +13,12 @@ class PetApptController extends CI_Controller{
     }
 
     public function store(){
+        
         $this->form_validation->set_rules('appointment_date','Appointment Date','required');
         $this->form_validation->set_rules('selected_service','Select Service','required');
-        $this->form_validation->set_rules('name','Name','required');
-        $this->form_validation->set_rules('phone','Phone Number','required');
-        $this->form_validation->set_rules('email','Email Address','required');
+        $this->form_validation->set_rules('name','Name','required|min_length[2]');
+        $this->form_validation->set_rules('phone','Phone Number','required|integer');
+        $this->form_validation->set_rules('email','Email Address','required|valid_email');
         $this->form_validation->set_rules('pet_number','Number of Pet(s)','required');
 
         if($this->form_validation->run()){
@@ -51,10 +52,10 @@ class PetApptController extends CI_Controller{
         
         $this->form_validation->set_rules('appointment_date','Appointment Date','required');
         $this->form_validation->set_rules('selected_service','Select Service','required');
-        $this->form_validation->set_rules('name','Name','required');
-        $this->form_validation->set_rules('phone','Phone Number','required');
-        $this->form_validation->set_rules('email','Email Address','required');
-        $this->form_validation->set_rules('pet_number','Number of Pet(s)','required');
+        $this->form_validation->set_rules('name','Name','required|min_length[2]');
+        $this->form_validation->set_rules('phone','Phone Number','required|integer');
+        $this->form_validation->set_rules('email','Email Address','required|valid_email');
+        $this->form_validation->set_rules('pet_number','Number of Pet(s)','required|integer');
 
         if($this->form_validation->run()){
             $data = [
